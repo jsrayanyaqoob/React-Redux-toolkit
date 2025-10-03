@@ -1,15 +1,16 @@
 import './App.css'
 import Todos from "./components/Todos"
-import AddTodos from "./components/addTodo"
+import AddTodo from "./components/addTodo"
 
 
 function App() {
-  
+
+
   return (
     <>
       <h1>Hello World</h1>
+      <AddTodo /> 
       <Todos />
-      <AddTodos />
     </>
   )
 }
