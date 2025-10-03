@@ -7,12 +7,18 @@ function Todos() {
 
     return (
         <>
-            {todos.map(todo => (
-                <li key={todo.id}>
-                    {todo.text}
-                    <button onClick={() => dispatch(removeTodo(todo.id))}>X</button>
-                </li>
-            ))}
+            {todos !== "" ? todos.map(todo => (
+                <ul className="border rounded w-86 px-2 py-1">
+                    <li key={todo.id} className="flex justify-between items-center gap-2">
+                        <div className="mb-2">
+                            {todo.text}
+                        </div>
+                        <button onClick={() => dispatch(removeTodo(todo.id))} className="font-bold cursor-pointer">X</button>
+                    </li>
+                </ul> 
+            )) : alert("No tasks available")}
+
+
         </>
     )
 }
