@@ -4,11 +4,9 @@ import AddTodo from "./components/addTodo"
 
 
 function App() {
-
-
   return (
     <>
-      <h1>Hello World</h1>
+      <h1>Todo</h1>
       <AddTodo /> 
       <Todos />
     </>

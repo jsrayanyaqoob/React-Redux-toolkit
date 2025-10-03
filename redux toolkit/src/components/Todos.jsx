@@ -6,20 +6,16 @@ function Todos() {
     const dispatch = useDispatch()
 
     return (
-        <>
-            {todos !== "" ? todos.map(todo => (
-                <ul className="border rounded w-86 px-2 py-1">
-                    <li key={todo.id} className="flex justify-between items-center gap-2">
-                        <div className="mb-2">
-                            {todo.text}
-                        </div>
-                        <button onClick={() => dispatch(removeTodo(todo.id))} className="font-bold cursor-pointer">X</button>
+        <div className="flex flex-col gap-2 mt-3">
+            {todos.length > 0 ? todos.map(todo => (
+                <ul key={todo.id} className="border rounded w-120 px-3 py-2">
+                    <li className="flex justify-between items-center gap-2">
+                        <div>{todo.text}</div>
+                        <button onClick={() => dispatch(removeTodo(todo.id))} className="font-bold cursor-pointer text-red-500">X</button>
                     </li>
-                </ul> 
-            )) : alert("No tasks available")}
-
-
-        </>
+                </ul>
+            )) : <p className="text-gray-500">No tasks available</p>}
+        </div>
     )
 }
 
